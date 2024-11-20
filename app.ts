@@ -8,6 +8,3 @@ axios.get('https://free2.airlinesim.aero/action/enterprise/aircraftsType?id=1759
     const data = response.data;
     fs.writeFileSync('./xd.html', data);
 });
-
-
-
