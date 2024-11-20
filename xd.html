@@ -1,0 +1,2352 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+
+
+
+ 
+
+
+<!DOCTYPE html
+PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="de">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-1YJZV0ENPC"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-1YJZV0ENPC');
+    </script>
+
+    <meta charset="utf-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <meta name="description" content="AirlineSim - the online airline management simulation game for pros.">
+    <meta name="author" content="simulogics GmbH">
+
+    <link rel="shortcut icon" href="../../favicon.ico"/>
+    <link rel="search" type="application/opensearchdescription+xml" title="AirlineSim Search"
+          href="../../app/openSearchDescription.xml"/>
+
+    <title>AirlineSim</title>
+
+    <link rel="stylesheet" type="text/css" href="../../assets/css/jquery-ui.theme.min.css"/>
+
+    <script type="text/javascript" src="../../assets/js/jquery.min.js"></script>
+    <script type="text/javascript" src="../../assets/js/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="../../assets/js/jquery-checkboxes.js"></script>
+    <script type="text/javascript" src="../../assets/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../assets/js/select2/select2.min.js"></script>
+    <script type="text/javascript" src="../../assets/js/d3.min.js"></script>
+
+    
+    
+        
+        
+        
+            <link rel="stylesheet" type="text/css" href="/dist/assets/theme-dark-DAP0oo3h.css"/>
+        
+    
+
+    
+        
+        
+            <script type="module" src="/dist/assets/index-C69jlX_D.js"></script>
+        
+        
+    
+
+    
+        
+        
+        
+            <link rel="stylesheet" type="text/css" href="/dist/assets/index-CeD1i0_t.css"/>
+        
+    
+
+
+
+    <link rel="stylesheet" type="text/css" href="../../assets/css/fixed-header-2.css"/>
+
+
+    
+</head>
+<body>
+
+<div class="modal fade" id="help-modal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">
+                    <span aria-hidden="true">&times;</span>
+                    <span class="sr-only">Close</span>
+                </button>
+                <h1 class="modal-title">Modal title</h1>
+            </div>
+            <div class="modal-body">
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+
+
+<nav class="navbar navbar-default as-navbar-meta" role="navigation">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse"
+                    data-target="#as-navbar-meta-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="fa fa-cog"></span>
+            </button>
+            <a class="navbar-brand" href="../portal/index">AirlineSim</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="as-navbar-meta-collapse">
+            
+            <form class="navbar-form navbar-left" role="search" method="get" action="../../app/info/search">
+                <div class="form-group">
+                    <div class="input-group">
+                        <input type="text" name="query" class="form-control" placeholder="Search">
+                        <span class="input-group-btn">
+                            <button type="submit" class="btn btn-default">
+                                <span class="fa fa-search"></span>
+                            </button>
+                        </span>
+                    </div>
+                </div>
+            </form>
+            <ul class="nav navbar-nav navbar-right">
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" title="Database">
+                        <span class="fa fa-database fa-lg"></span>
+                        <span class="as-icon-label">Database</span>
+                        <span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu" role="menu">
+                        <li class="dropdown-header">Directories</li>
+                        <li><a href="../info/countries">Countries</a></li>
+                        <li><a href="../../app/info/enterprises">Enterprises</a></li>
+                        <li><a href="../../app/info/alliances">Alliances</a></li>
+                        <li class="divider"></li>
+                        <li class="dropdown-header">Other Resources</li>
+                        <li><a href="../info/fleets">Fleet Lists</a></li>
+                        <li><a href="../info/stats">Statistics</a></li>
+                        <li><a href="../../app/info/ors">Online Reservation System</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" title="Help">
+                        <span class="fa fa-lightbulb-o fa-lg"></span>
+                        <span class="as-icon-label">Help</span>
+                        <span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu" role="menu">
+                        <li>
+                            <a href="https://handbook.airlinesim.aero/" target="_blank">
+                                <span class="fa fa-external-link"></span>
+                                Handbook
+                            </a>
+                        </li>
+                        <li>
+                            <a href="../../app/portal/support" title="Support">
+                                <span class="fa fa-question"></span>
+                                <span class="as-icon-label">Support</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="../../app/info/about">
+                                <span class="fa fa-info"></span>
+                                <span class="as-icon-label">About AirlineSim</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="../../app/info/status">
+                                <span class="fa fa-heartbeat"></span>
+                                <span class="as-icon-label">Simulation Status</span>
+                            </a>
+                        </li>
+                        <li class="divider"></li>
+                        <li class="dropdown-header">Game Rules</li>
+                        <li><a href="../../app/info/rules/general">General Rules</a></li>
+                        <li><a href="../../app/info/rules/naming">Naming Rules</a></li>
+                        <li><a href="../../app/info/rules/routes">Forbidden Routes</a></li>
+                        <li class="divider"></li>
+                        <li class="dropdown-header">Legal</li>
+                        <li>
+                            <a href="https://simulogics.games/terms/" target="_blank">
+                                <span class="fa fa-external-link"></span>
+                                Terms & Conditions
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://simulogics.games/privacy/" target="_blank">
+                                <span class="fa fa-external-link"></span>
+                                Privacy Statement
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://simulogics.games/impressum/" target="_blank">
+                                <span class="fa fa-external-link"></span>
+                                Impressum
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" title="Community">
+                        <span class="fa fa-users"></span>
+                        <span class="as-icon-label">Community</span>
+                        <span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu" role="menu">
+                        <li>
+                            <a href="https://www.airlinesim.aero/blog/" target="_blank">
+                                <span class="fa fa-external-link"></span>
+                                Blog
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://forums.airlinesim.aero" target="_blank">
+                                <span class="fa fa-external-link"></span>
+                                Forums
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://discord.gg/5K2Axks" target="_blank">
+                                <span class="fa fa-external-link"></span>
+                                Discord Chat
+                            </a>
+                        </li>
+                        <li class="divider"></li>
+                        <li class="dropdown-header">Follow AirlineSim</li>
+                        <li>
+                            <a href="https://facebook.com/airlinesim" target="_blank">
+                                <span class="fa fa-fw fa-facebook"></span>
+                                Facebook
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://twitter.com/airlinesim" target="_blank">
+                                <span class="fa fa-fw fa-twitter"></span>
+                                Twitter
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://youtube.com/airlinesimofficial" target="_blank">
+                                <span class="fa fa-fw fa-youtube"></span>
+                                YouTube
+                            </a>
+                        </li>
+                        <li class="divider"></li>
+                        <li class="dropdown-header">More simulogics games</li>
+                        <li>
+                            <a href="https://prosperousuniverse.com/" target="_blank">
+                                <span class="fa fa-external-link"></span>
+                                Prosperous Universe
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                
+                    <li>
+                        <a href="../../app/user/mail" title="Private Messages">
+                            <span class="fa fa-envelope fa-lg"></span>
+                            <span class="as-icon-label">Private Messages</span>
+                            
+                        </a>
+                    </li>
+                
+                
+                
+    <li class="dropdown">
+        <a href="../../app/user/settings" class="dropdown-toggle" data-toggle="dropdown"
+           title="Settings">
+            <span class="fa fa-user fa-lg"></span>
+            <span class="as-icon-label">PastaBiceps</span>
+            <span class="caret"></span>
+        </a>
+        <ul class="dropdown-menu" role="menu">
+            <li class="dropdown-header">Account</li>
+            <li><a href="https://accounts.airlinesim.aero/account">Settings/Game Worlds</a></li>
+            
+                <li>
+                    <a class="logout" href="../user/logout">
+                        
+                            
+                        Log out PastaBiceps
+                    </a>
+                </li>
+            
+            
+                <li class="divider"></li>
+                <li class="dropdown-header">Game World</li>
+                <li><a href="../info/user?id=341">Your Profile</a></li>
+                <li><a href="../user/holdings">Your Holdings</a></li>
+                <li><a href="../../app/user/settings">Settings</a></li>
+                <li><a href="../../app/user/delete">Deactivation</a></li>
+            
+        </ul>
+    </li>
+
+                
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container-fluid -->
+</nav>
+
+<nav class="navbar navbar-default as-navbar-main" role="navigation">
+    
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse"
+                    data-target="#as-navbar-main-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="as-navbar-main-collapse">
+            <ul class="nav navbar-nav">
+                <li class="dropdown">
+                    <a class="name" data-toggle="dropdown" href="../../app/enterprise/dashboard">
+                        Danish Royal Airline
+                        <span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu" role="menu">
+                        <li><a href="../../app/enterprise/dashboard">Overview</a></li>
+                        <li><a href="../../app/enterprise/settings">Settings</a></li>
+                        <li><a href="../../app/enterprise/delete">Liquidation/Reset</a></li>
+                        
+                        <li class="divider"></li>
+                        <li class="dropdown-header">New Enterprise</li>
+                        <li><a href="../../app/enterprise/new">Create new Enterprise</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a class="balance" href="../../app/finance/accounting">
+                        
+                            <span class="good">
+                                5,923,732
+                            </span>
+                        
+                        
+                        AS$
+                    </a>
+                </li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                        Commercial
+                        <span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu" role="menu">
+                        <li class="dropdown-header">Network Planning</li>
+                        <li><a href="../../app/com/scheduling">Scheduling</a></li>
+                        <li><a href="../../app/com/numbers">Flight Numbers</a></li>
+                        <li><a href="../../app/com/routes/evaluation">Route Evaluation</a></li>
+                        <li><a href="../../app/com/markets">Market Analysis</a></li>
+                        <li class="divider"></li>
+                        <li class="dropdown-header">Sales & Distribution</li>
+                        <li><a href="../enterprise/flightsPrices">Pricing</a></li>
+                        <li><a href="../../app/com/inventory">Inventory</a></li>
+                        <li><a href="../../app/com/loads">Load Monitoring</a></li>
+                        <li class="divider"></li>
+                        <li class="dropdown-header">Product & Customer Service</li>
+                        <li><a href="../../app/seating">Cabin Configurations</a></li>
+                        <li><a href="../enterprise/serviceProfiles">Service Profiles</a></li>
+                        <li class="divider"></li>
+                        <li class="dropdown-header">Business Development</li>
+                        <li><a href="../enterprise/interlining">Interlining</a></li>
+                        
+                        
+                            <li><a href="../../app/alliance/new">New Alliance</a></li>
+                        
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                        Operations
+                        <span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu" role="menu">
+                        <li class="dropdown-header">Flight Operations</li>
+                        <li><a href="../../app/fleets">Fleet Management</a></li>
+                        <li><a href="../../app/aircraft/evaluation">Aircraft Type Evaluation</a></li>
+                        <li><a href="../enterprise/maintenance">Maintenance</a></li>
+                        <li><a href="../enterprise/operationsControl">Operations Control</a></li>
+                        <li class="divider"></li>
+                        <li class="dropdown-header">Ground Operations</li>
+                        <li><a href="../../app/ops/stations">Stations</a></li>
+                        <li><a href="../enterprise/buildings">Facilities</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                        Management
+                        <span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu" role="menu">
+                        <li class="dropdown-header">Procurement</li>
+                        <li><a href="../../app/aircraft/manufacturers">Aircraft Manufacturers</a></li>
+                        <li><a href="../../app/aircraft/market">Aircraft Market</a></li>
+                        <li class="divider"></li>
+                        <li class="dropdown-header">Human Resources</li>
+                        <li><a href="../enterprise/staffOverview">Personnel Management</a></li>
+                        <li><a href="../enterprise/staffPilots">Crew Management</a></li>
+                        <li class="divider"></li>
+                        <li class="dropdown-header">Investments</li>
+                        <li><a href="../holding/stockexchanges">Markets & Exchanges</a></li>
+                        <li><a href="../../app/enterprise/shares">Subsidiaries & Portfolio</a></li>
+                        <li><a href="../holding/orders">Order List</a></li>
+                        <li class="divider"></li>
+                        <li class="dropdown-header">Finance</li>
+                        <li><a href="../../app/finance/capital">Corporate Finance</a></li>
+                        <li><a href="../../app/finance/accounting">Accounting</a></li>
+                        <li><a href="../enterprise/schedule">Cash Flow</a></li>
+                        <li><a href="../../app/finance/assets">Asset Management</a></li>
+                        <li><a href="../../app/finance/leasing">Leasing</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container-fluid -->
+    
+</nav>
+
+<div class="container-fluid">
+
+    
+
+    
+
+    
+    <div class="as-unread-news" id="unread-news">
+        <p>
+            <strong>
+                <a href="https://www.airlinesim.aero/blog/2024/11/18/yeager-x/" target="_blank">
+                    News: Server Relaunch: Let's Celebrate Yeager's Tenth Iteration!
+                </a>
+            </strong><br/>
+            <a href="#" id="unread-news-hide">hide message</a>
+            
+        </p>
+    </div>
+    
+
+    
+
+
+
+
+ 
+
+
+
+
+
+
+ 
+
+
+
+
+
+<h1>Aircraft Manufacturers</h1>
+<ul class="as-panel as-action-bar">
+    <li>
+        <a href="../../app/aircraft/manufacturers" class="btn btn-default">
+            back to manufacturers
+        </a>
+        <a href="aircraftsFamily?id=1200250" class="btn btn-default">
+            back to type family
+        </a>
+    </li>
+</ul>
+
+<h2>Airbus A220-300</h2>
+
+<ul class="as-panel as-action-bar">
+    <li>
+        <a href="../../app/aircraft/market/17590" class="btn btn-success">Check out used aircraft offers</a>
+    </li>
+</ul>
+
+    
+        <div class="aircraft-type-picture">
+            <img src="../../assets/img/acprofiles/BOCS300_RP.jpg" alt="BOCS300_RP" class="img-responsive"/>
+        </div>
+    
+
+<div class="row">
+    <div class="col-md-4">
+        <h3>Miscellaneous information</h3>
+
+        <div class="as-panel">
+            <div class="as-table-well">
+                <table class="table table-hover">
+                    <tbody>
+                    
+                    <tr>
+                        <td>List price</td>
+                        <td class="text-right">
+                            39,501,000 AS$
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td>3 letter code</td>
+                        <td class="text-right">
+                                CS3
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Manufacturer</td>
+                        <td class="text-right">
+                                Airbus Industrie
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Manufacturing location</td>
+                        <td class="text-right">
+                            
+                                
+                                
+                                
+                            <a href="../info/airport?id=1729">Montreal</a> (YMX)
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td>Production period</td>
+                        <td class="text-right">
+                            
+                                
+                                
+                                
+                                    
+                                        
+                                        
+                                    2016 - today
+                                
+                            
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Production rate</td>
+                        <td class="text-right">
+                            
+                                
+                                
+                                
+                                    1 / 21h
+                                
+                            
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td>Quantity produced</td>
+                        <td class="text-right">
+                            105
+                        </td>
+                    </tr>
+                    
+                        <tr>
+                            <td>Popularity with passengers</td>
+                            <td class="text-right">
+                                <img src="../../assets/img/rating/10.png" alt="factor"/>
+                            </td>
+                        </tr>
+                    
+                    </tbody>
+                    <tbody>
+                    <tr>
+                        <td>Type rating</td>
+                        <td class="text-right">
+                                A220
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Cockpit crew</td>
+                        <td class="text-right">
+                                2
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <h3>
+            Route Restrictions
+            <a href="../../app/docs-render?article=RouteRestrictions" class="help-link" title="Route Restrictions">
+                <span class="fa fa-question-circle"></span>
+            </a>
+        </h3>
+
+        <div class="as-panel">
+            <div class="as-table-well">
+                <table class="table table-hover">
+                    <thead>
+                    <tr>
+                        <th colspan="2">Airport Size</th>
+                        
+                        <th class="text-center">0</th>
+                        
+                        <th class="text-center">1</th>
+                        
+                        <th class="text-center">2</th>
+                        
+                        <th class="text-center">3</th>
+                        
+                        <th class="text-center">4</th>
+                        
+                        <th class="text-center">5</th>
+                        
+                        <th class="text-center">6</th>
+                        
+                        <th class="text-center">7</th>
+                        
+                        <th class="text-center">8</th>
+                        
+                        <th class="text-center">9</th>
+                        
+                        <th class="text-center">10</th>
+                        
+                    </tr>
+                    </thead>
+                    <tbody>
+                    
+                        <tr>
+                            <th>0</th>
+                            <th><img src="../../assets/img/demand/1.png" alt="0"/></th>
+                            
+                                <td class="text-center">
+                                    
+                                        
+                                            <span class="fa fa-check good" title="0 - 0"></span>
+                                        
+                                        
+                                    
+                                </td>
+                            
+                                <td class="text-center">
+                                    
+                                        
+                                            <span class="fa fa-check good" title="0 - 1"></span>
+                                        
+                                        
+                                    
+                                </td>
+                            
+                                <td class="text-center">
+                                    
+                                        
+                                            <span class="fa fa-check good" title="0 - 2"></span>
+                                        
+                                        
+                                    
+                                </td>
+                            
+                                <td class="text-center">
+                                    
+                                        
+                                            <span class="fa fa-check good" title="0 - 3"></span>
+                                        
+                                        
+                                    
+                                </td>
+                            
+                                <td class="text-center">
+                                    
+                                        
+                                            <span class="fa fa-check good" title="0 - 4"></span>
+                                        
+                                        
+                                    
+                                </td>
+                            
+                                <td class="text-center">
+                                    
+                                        
+                                            <span class="fa fa-check good" title="0 - 5"></span>
+                                        
+                                        
+                                    
+                                </td>
+                            
+                                <td class="text-center">
+                                    
+                                        
+                                            <span class="fa fa-check good" title="0 - 6"></span>
+                                        
+                                        
+                                    
+                                </td>
+                            
+                                <td class="text-center">
+                                    
+                                        
+                                            <span class="fa fa-check good" title="0 - 7"></span>
+                                        
+                                        
+                                    
+                                </td>
+                            
+                                <td class="text-center">
+                                    
+                                        
+                                            <span class="fa fa-check good" title="0 - 8"></span>
+                                        
+                                        
+                                    
+                                </td>
+                            
+                                <td class="text-center">
+                                    
+                                        
+                                            <span class="fa fa-check good" title="0 - 9"></span>
+                                        
+                                        
+                                    
+                                </td>
+                            
+                                <td class="text-center">
+                                    
+                                        
+                                            <span class="fa fa-check good" title="0 - 10"></span>
+                                        
+                                        
+                                    
+                                </td>
+                            
+                        </tr>
+                    
+                        <tr>
+                            <th>1</th>
+                            <th><img src="../../assets/img/demand/2.png" alt="1"/></th>
+                            
+                                <td class="text-center">
+                                    
+                                        
+                                            <span class="fa fa-check good" title="1 - 0"></span>
+                                        
+                                        
+                                    
+                                </td>
+                            
+                                <td class="text-center">
+                                    
+                                        
+                                            <span class="fa fa-check good" title="1 - 1"></span>
+                                        
+                                        
+                                    
+                                </td>
+                            
+                                <td class="text-center">
+                                    
+                                        
+                                            <span class="fa fa-check good" title="1 - 2"></span>
+                                        
+                                        
+                                    
+                                </td>
+                            
+                                <td class="text-center">
+                                    
+                                        
+                                            <span class="fa fa-check good" title="1 - 3"></span>
+                                        
+                                        
+                                    
+                                </td>
+                            
+                                <td class="text-center">
+                                    
+                                        
+                                            <span class="fa fa-check good" title="1 - 4"></span>
+                                        
+                                        
+                                    
+                                </td>
+                            
+                                <td class="text-center">
+                                    
+                                        
+                                            <span class="fa fa-check good" title="1 - 5"></span>
+                                        
+                                        
+                                    
+                                </td>
+                            
+                                <td class="text-center">
+                                    
+                                        
+                                            <span class="fa fa-check good" title="1 - 6"></span>
+                                        
+                                        
+                                    
+                                </td>
+                            
+                                <td class="text-center">
+                                    
+                                        
+                                            <span class="fa fa-check good" title="1 - 7"></span>
+                                        
+                                        
+                                    
+                                </td>
+                            
+                                <td class="text-center">
+                                    
+                                        
+                                            <span class="fa fa-check good" title="1 - 8"></span>
+                                        
+                                        
+                                    
+                                </td>
+                            
+                                <td class="text-center">
+                                    
+                                        
+                                            <span class="fa fa-check good" title="1 - 9"></span>
+                                        
+                                        
+                                    
+                                </td>
+                            
+                                <td class="text-center">
+                                    
+                                        
+                                            <span class="fa fa-check good" title="1 - 10"></span>
+                                        
+                                        
+                                    
+                                </td>
+                            
+                        </tr>
+                    
+                        <tr>
+                            <th>2</th>
+                            <th><img src="../../assets/img/demand/3.png" alt="2"/></th>
+                            
+                                <td class="text-center">
+                                    
+                                        
+                                            <span class="fa fa-check good" title="2 - 0"></span>
+                                        
+                                        
+                                    
+                                </td>
+                            
+                                <td class="text-center">
+                                    
+                                        
+                                            <span class="fa fa-check good" title="2 - 1"></span>
+                                        
+                                        
+                                    
+                                </td>
+                            
+                                <td class="text-center">
+                                    
+                                        
+                                            <span class="fa fa-check good" title="2 - 2"></span>
+                                        
+                                        
+                                    
+                                </td>
+                            
+                                <td class="text-center">
+                                    
+                                        
+                                            <span class="fa fa-check good" title="2 - 3"></span>
+                                        
+                                        
+                                    
+                                </td>
+                            
+                                <td class="text-center">
+                                    
+                                        
+                                            <span class="fa fa-check good" title="2 - 4"></span>
+                                        
+                                        
+                                    
+                                </td>
+                            
+                                <td class="text-center">
+                                    
+                                        
+                                            <span class="fa fa-check good" title="2 - 5"></span>
+                                        
+                                        
+                                    
+                                </td>
+                            
+                                <td class="text-center">
+                                    
+                                        
+                                            <span class="fa fa-check good" title="2 - 6"></span>
+                                        
+                                        
+                                    
+                                </td>
+                            
+                                <td class="text-center">
+                                    
+                                        
+                                            <span class="fa fa-check good" title="2 - 7"></span>
+                                        
+                                        
+                                    
+                                </td>
+                            
+                                <td class="text-center">
+                                    
+                                        
+                                            <span class="fa fa-check good" title="2 - 8"></span>
+                                        
+                                        
+                                    
+                                </td>
+                            
+                                <td class="text-center">
+                                    
+                                        
+                                            <span class="fa fa-check good" title="2 - 9"></span>
+                                        
+                                        
+                                    
+                                </td>
+                            
+                                <td class="text-center">
+                                    
+                                        
+                                            <span class="fa fa-check good" title="2 - 10"></span>
+                                        
+                                        
+                                    
+                                </td>
+                            
+                        </tr>
+                    
+                        <tr>
+                            <th>3</th>
+                            <th><img src="../../assets/img/demand/4.png" alt="3"/></th>
+                            
+                                <td class="text-center">
+                                    
+                                        
+                                            <span class="fa fa-check good" title="3 - 0"></span>
+                                        
+                                        
+                                    
+                                </td>
+                            
+                                <td class="text-center">
+                                    
+                                        
+                                            <span class="fa fa-check good" title="3 - 1"></span>
+                                        
+                                        
+                                    
+                                </td>
+                            
+                                <td class="text-center">
+                                    
+                                        
+                                            <span class="fa fa-check good" title="3 - 2"></span>
+                                        
+                                        
+                                    
+                                </td>
+                            
+                                <td class="text-center">
+                                    
+                                        
+                                            <span class="fa fa-check good" title="3 - 3"></span>
+                                        
+                                        
+                                    
+                                </td>
+                            
+                                <td class="text-center">
+                                    
+                                        
+                                            <span class="fa fa-check good" title="3 - 4"></span>
+                                        
+                                        
+                                    
+                                </td>
+                            
+                                <td class="text-center">
+                                    
+                                        
+                                            <span class="fa fa-check good" title="3 - 5"></span>
+                                        
+                                        
+                                    
+                                </td>
+                            
+                                <td class="text-center">
+                                    
+                                        
+                                            <span class="fa fa-check good" title="3 - 6"></span>
+                                        
+                                        
+                                    
+                                </td>
+                            
+                                <td class="text-center">
+                                    
+                                        
+                                            <span class="fa fa-check good" title="3 - 7"></span>
+                                        
+                                        
+                                    
+                                </td>
+                            
+                                <td class="text-center">
+                                    
+                                        
+                                            <span class="fa fa-check good" title="3 - 8"></span>
+                                        
+                                        
+                                    
+                                </td>
+                            
+                                <td class="text-center">
+                                    
+                                        
+                                            <span class="fa fa-check good" title="3 - 9"></span>
+                                        
+                                        
+                                    
+                                </td>
+                            
+                                <td class="text-center">
+                                    
+                                        
+                                            <span class="fa fa-check good" title="3 - 10"></span>
+                                        
+                                        
+                                    
+                                </td>
+                            
+                        </tr>
+                    
+                        <tr>
+                            <th>4</th>
+                            <th><img src="../../assets/img/demand/5.png" alt="4"/></th>
+                            
+                                <td class="text-center">
+                                    
+                                        
+                                            <span class="fa fa-check good" title="4 - 0"></span>
+                                        
+                                        
+                                    
+                                </td>
+                            
+                                <td class="text-center">
+                                    
+                                        
+                                            <span class="fa fa-check good" title="4 - 1"></span>
+                                        
+                                        
+                                    
+                                </td>
+                            
+                                <td class="text-center">
+                                    
+                                        
+                                            <span class="fa fa-check good" title="4 - 2"></span>
+                                        
+                                        
+                                    
+                                </td>
+                            
+                                <td class="text-center">
+                                    
+                                        
+                                            <span class="fa fa-check good" title="4 - 3"></span>
+                                        
+                                        
+                                    
+                                </td>
+                            
+                                <td class="text-center">
+                                    
+                                        
+                                            <span class="fa fa-check good" title="4 - 4"></span>
+                                        
+                                        
+                                    
+                                </td>
+                            
+                                <td class="text-center">
+                                    
+                                        
+                                            <span class="fa fa-check good" title="4 - 5"></span>
+                                        
+                                        
+                                    
+                                </td>
+                            
+                                <td class="text-center">
+                                    
+                                        
+                                            <span class="fa fa-check good" title="4 - 6"></span>
+                                        
+                                        
+                                    
+                                </td>
+                            
+                                <td class="text-center">
+                                    
+                                        
+                                            <span class="fa fa-check good" title="4 - 7"></span>
+                                        
+                                        
+                                    
+                                </td>
+                            
+                                <td class="text-center">
+                                    
+                                        
+                                            <span class="fa fa-check good" title="4 - 8"></span>
+                                        
+                                        
+                                    
+                                </td>
+                            
+                                <td class="text-center">
+                                    
+                                        
+                                            <span class="fa fa-check good" title="4 - 9"></span>
+                                        
+                                        
+                                    
+                                </td>
+                            
+                                <td class="text-center">
+                                    
+                                        
+                                            <span class="fa fa-check good" title="4 - 10"></span>
+                                        
+                                        
+                                    
+                                </td>
+                            
+                        </tr>
+                    
+                        <tr>
+                            <th>5</th>
+                            <th><img src="../../assets/img/demand/6.png" alt="5"/></th>
+                            
+                                <td class="text-center">
+                                    
+                                        
+                                            <span class="fa fa-check good" title="5 - 0"></span>
+                                        
+                                        
+                                    
+                                </td>
+                            
+                                <td class="text-center">
+                                    
+                                        
+                                            <span class="fa fa-check good" title="5 - 1"></span>
+                                        
+                                        
+                                    
+                                </td>
+                            
+                                <td class="text-center">
+                                    
+                                        
+                                            <span class="fa fa-check good" title="5 - 2"></span>
+                                        
+                                        
+                                    
+                                </td>
+                            
+                                <td class="text-center">
+                                    
+                                        
+                                            <span class="fa fa-check good" title="5 - 3"></span>
+                                        
+                                        
+                                    
+                                </td>
+                            
+                                <td class="text-center">
+                                    
+                                        
+                                            <span class="fa fa-check good" title="5 - 4"></span>
+                                        
+                                        
+                                    
+                                </td>
+                            
+                                <td class="text-center">
+                                    
+                                        
+                                            <span class="fa fa-check good" title="5 - 5"></span>
+                                        
+                                        
+                                    
+                                </td>
+                            
+                                <td class="text-center">
+                                    
+                                        
+                                            <span class="fa fa-check good" title="5 - 6"></span>
+                                        
+                                        
+                                    
+                                </td>
+                            
+                                <td class="text-center">
+                                    
+                                        
+                                            <span class="fa fa-check good" title="5 - 7"></span>
+                                        
+                                        
+                                    
+                                </td>
+                            
+                                <td class="text-center">
+                                    
+                                        
+                                            <span class="fa fa-check good" title="5 - 8"></span>
+                                        
+                                        
+                                    
+                                </td>
+                            
+                                <td class="text-center">
+                                    
+                                        
+                                            <span class="fa fa-check good" title="5 - 9"></span>
+                                        
+                                        
+                                    
+                                </td>
+                            
+                                <td class="text-center">
+                                    
+                                        
+                                            <span class="fa fa-check good" title="5 - 10"></span>
+                                        
+                                        
+                                    
+                                </td>
+                            
+                        </tr>
+                    
+                        <tr>
+                            <th>6</th>
+                            <th><img src="../../assets/img/demand/7.png" alt="6"/></th>
+                            
+                                <td class="text-center">
+                                    
+                                        
+                                            <span class="fa fa-check good" title="6 - 0"></span>
+                                        
+                                        
+                                    
+                                </td>
+                            
+                                <td class="text-center">
+                                    
+                                        
+                                            <span class="fa fa-check good" title="6 - 1"></span>
+                                        
+                                        
+                                    
+                                </td>
+                            
+                                <td class="text-center">
+                                    
+                                        
+                                            <span class="fa fa-check good" title="6 - 2"></span>
+                                        
+                                        
+                                    
+                                </td>
+                            
+                                <td class="text-center">
+                                    
+                                        
+                                            <span class="fa fa-check good" title="6 - 3"></span>
+                                        
+                                        
+                                    
+                                </td>
+                            
+                                <td class="text-center">
+                                    
+                                        
+                                            <span class="fa fa-check good" title="6 - 4"></span>
+                                        
+                                        
+                                    
+                                </td>
+                            
+                                <td class="text-center">
+                                    
+                                        
+                                            <span class="fa fa-check good" title="6 - 5"></span>
+                                        
+                                        
+                                    
+                                </td>
+                            
+                                <td class="text-center">
+                                    
+                                        
+                                            <span class="fa fa-check good" title="6 - 6"></span>
+                                        
+                                        
+                                    
+                                </td>
+                            
+                                <td class="text-center">
+                                    
+                                        
+                                            <span class="fa fa-check good" title="6 - 7"></span>
+                                        
+                                        
+                                    
+                                </td>
+                            
+                                <td class="text-center">
+                                    
+                                        
+                                            <span class="fa fa-check good" title="6 - 8"></span>
+                                        
+                                        
+                                    
+                                </td>
+                            
+                                <td class="text-center">
+                                    
+                                        
+                                            <span class="fa fa-check good" title="6 - 9"></span>
+                                        
+                                        
+                                    
+                                </td>
+                            
+                                <td class="text-center">
+                                    
+                                        
+                                            <span class="fa fa-check good" title="6 - 10"></span>
+                                        
+                                        
+                                    
+                                </td>
+                            
+                        </tr>
+                    
+                        <tr>
+                            <th>7</th>
+                            <th><img src="../../assets/img/demand/8.png" alt="7"/></th>
+                            
+                                <td class="text-center">
+                                    
+                                        
+                                            <span class="fa fa-check good" title="7 - 0"></span>
+                                        
+                                        
+                                    
+                                </td>
+                            
+                                <td class="text-center">
+                                    
+                                        
+                                            <span class="fa fa-check good" title="7 - 1"></span>
+                                        
+                                        
+                                    
+                                </td>
+                            
+                                <td class="text-center">
+                                    
+                                        
+                                            <span class="fa fa-check good" title="7 - 2"></span>
+                                        
+                                        
+                                    
+                                </td>
+                            
+                                <td class="text-center">
+                                    
+                                        
+                                            <span class="fa fa-check good" title="7 - 3"></span>
+                                        
+                                        
+                                    
+                                </td>
+                            
+                                <td class="text-center">
+                                    
+                                        
+                                            <span class="fa fa-check good" title="7 - 4"></span>
+                                        
+                                        
+                                    
+                                </td>
+                            
+                                <td class="text-center">
+                                    
+                                        
+                                            <span class="fa fa-check good" title="7 - 5"></span>
+                                        
+                                        
+                                    
+                                </td>
+                            
+                                <td class="text-center">
+                                    
+                                        
+                                            <span class="fa fa-check good" title="7 - 6"></span>
+                                        
+                                        
+                                    
+                                </td>
+                            
+                                <td class="text-center">
+                                    
+                                        
+                                            <span class="fa fa-check good" title="7 - 7"></span>
+                                        
+                                        
+                                    
+                                </td>
+                            
+                                <td class="text-center">
+                                    
+                                        
+                                            <span class="fa fa-check good" title="7 - 8"></span>
+                                        
+                                        
+                                    
+                                </td>
+                            
+                                <td class="text-center">
+                                    
+                                        
+                                            <span class="fa fa-check good" title="7 - 9"></span>
+                                        
+                                        
+                                    
+                                </td>
+                            
+                                <td class="text-center">
+                                    
+                                        
+                                            <span class="fa fa-check good" title="7 - 10"></span>
+                                        
+                                        
+                                    
+                                </td>
+                            
+                        </tr>
+                    
+                        <tr>
+                            <th>8</th>
+                            <th><img src="../../assets/img/demand/9.png" alt="8"/></th>
+                            
+                                <td class="text-center">
+                                    
+                                        
+                                            <span class="fa fa-check good" title="8 - 0"></span>
+                                        
+                                        
+                                    
+                                </td>
+                            
+                                <td class="text-center">
+                                    
+                                        
+                                            <span class="fa fa-check good" title="8 - 1"></span>
+                                        
+                                        
+                                    
+                                </td>
+                            
+                                <td class="text-center">
+                                    
+                                        
+                                            <span class="fa fa-check good" title="8 - 2"></span>
+                                        
+                                        
+                                    
+                                </td>
+                            
+                                <td class="text-center">
+                                    
+                                        
+                                            <span class="fa fa-check good" title="8 - 3"></span>
+                                        
+                                        
+                                    
+                                </td>
+                            
+                                <td class="text-center">
+                                    
+                                        
+                                            <span class="fa fa-check good" title="8 - 4"></span>
+                                        
+                                        
+                                    
+                                </td>
+                            
+                                <td class="text-center">
+                                    
+                                        
+                                            <span class="fa fa-check good" title="8 - 5"></span>
+                                        
+                                        
+                                    
+                                </td>
+                            
+                                <td class="text-center">
+                                    
+                                        
+                                            <span class="fa fa-check good" title="8 - 6"></span>
+                                        
+                                        
+                                    
+                                </td>
+                            
+                                <td class="text-center">
+                                    
+                                        
+                                            <span class="fa fa-check good" title="8 - 7"></span>
+                                        
+                                        
+                                    
+                                </td>
+                            
+                                <td class="text-center">
+                                    
+                                        
+                                            <span class="fa fa-check good" title="8 - 8"></span>
+                                        
+                                        
+                                    
+                                </td>
+                            
+                                <td class="text-center">
+                                    
+                                        
+                                            <span class="fa fa-check good" title="8 - 9"></span>
+                                        
+                                        
+                                    
+                                </td>
+                            
+                                <td class="text-center">
+                                    
+                                        
+                                            <span class="fa fa-check good" title="8 - 10"></span>
+                                        
+                                        
+                                    
+                                </td>
+                            
+                        </tr>
+                    
+                        <tr>
+                            <th>9</th>
+                            <th><img src="../../assets/img/demand/10.png" alt="9"/></th>
+                            
+                                <td class="text-center">
+                                    
+                                        
+                                            <span class="fa fa-check good" title="9 - 0"></span>
+                                        
+                                        
+                                    
+                                </td>
+                            
+                                <td class="text-center">
+                                    
+                                        
+                                            <span class="fa fa-check good" title="9 - 1"></span>
+                                        
+                                        
+                                    
+                                </td>
+                            
+                                <td class="text-center">
+                                    
+                                        
+                                            <span class="fa fa-check good" title="9 - 2"></span>
+                                        
+                                        
+                                    
+                                </td>
+                            
+                                <td class="text-center">
+                                    
+                                        
+                                            <span class="fa fa-check good" title="9 - 3"></span>
+                                        
+                                        
+                                    
+                                </td>
+                            
+                                <td class="text-center">
+                                    
+                                        
+                                            <span class="fa fa-check good" title="9 - 4"></span>
+                                        
+                                        
+                                    
+                                </td>
+                            
+                                <td class="text-center">
+                                    
+                                        
+                                            <span class="fa fa-check good" title="9 - 5"></span>
+                                        
+                                        
+                                    
+                                </td>
+                            
+                                <td class="text-center">
+                                    
+                                        
+                                            <span class="fa fa-check good" title="9 - 6"></span>
+                                        
+                                        
+                                    
+                                </td>
+                            
+                                <td class="text-center">
+                                    
+                                        
+                                            <span class="fa fa-check good" title="9 - 7"></span>
+                                        
+                                        
+                                    
+                                </td>
+                            
+                                <td class="text-center">
+                                    
+                                        
+                                            <span class="fa fa-check good" title="9 - 8"></span>
+                                        
+                                        
+                                    
+                                </td>
+                            
+                                <td class="text-center">
+                                    
+                                        
+                                            <span class="fa fa-check good" title="9 - 9"></span>
+                                        
+                                        
+                                    
+                                </td>
+                            
+                                <td class="text-center">
+                                    
+                                        
+                                            <span class="fa fa-check good" title="9 - 10"></span>
+                                        
+                                        
+                                    
+                                </td>
+                            
+                        </tr>
+                    
+                        <tr>
+                            <th>10</th>
+                            <th><img src="../../assets/img/demand/11.png" alt="10"/></th>
+                            
+                                <td class="text-center">
+                                    
+                                        
+                                            <span class="fa fa-check good" title="10 - 0"></span>
+                                        
+                                        
+                                    
+                                </td>
+                            
+                                <td class="text-center">
+                                    
+                                        
+                                            <span class="fa fa-check good" title="10 - 1"></span>
+                                        
+                                        
+                                    
+                                </td>
+                            
+                                <td class="text-center">
+                                    
+                                        
+                                            <span class="fa fa-check good" title="10 - 2"></span>
+                                        
+                                        
+                                    
+                                </td>
+                            
+                                <td class="text-center">
+                                    
+                                        
+                                            <span class="fa fa-check good" title="10 - 3"></span>
+                                        
+                                        
+                                    
+                                </td>
+                            
+                                <td class="text-center">
+                                    
+                                        
+                                            <span class="fa fa-check good" title="10 - 4"></span>
+                                        
+                                        
+                                    
+                                </td>
+                            
+                                <td class="text-center">
+                                    
+                                        
+                                            <span class="fa fa-check good" title="10 - 5"></span>
+                                        
+                                        
+                                    
+                                </td>
+                            
+                                <td class="text-center">
+                                    
+                                        
+                                            <span class="fa fa-check good" title="10 - 6"></span>
+                                        
+                                        
+                                    
+                                </td>
+                            
+                                <td class="text-center">
+                                    
+                                        
+                                            <span class="fa fa-check good" title="10 - 7"></span>
+                                        
+                                        
+                                    
+                                </td>
+                            
+                                <td class="text-center">
+                                    
+                                        
+                                            <span class="fa fa-check good" title="10 - 8"></span>
+                                        
+                                        
+                                    
+                                </td>
+                            
+                                <td class="text-center">
+                                    
+                                        
+                                            <span class="fa fa-check good" title="10 - 9"></span>
+                                        
+                                        
+                                    
+                                </td>
+                            
+                                <td class="text-center">
+                                    
+                                        
+                                            <span class="fa fa-check good" title="10 - 10"></span>
+                                        
+                                        
+                                    
+                                </td>
+                            
+                        </tr>
+                    
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <h3>Performance graph</h3>
+        <div class="as-panel">
+            <img src="../chart/aircraftsPerformanceChart?id=17590" alt="performance" class="img-responsive"/>
+        </div>
+
+        <h3>
+            Payload
+            <a href="../../app/docs-render?article=Payload" class="help-link" title="Payload">
+                <span class="fa fa-question-circle"></span>
+            </a>
+        </h3>
+        <div class="as-panel">
+            <div class="as-table-well">
+                <table class="table table-hover">
+                    <tbody>
+                    <tr>
+                        <td>MPL (Maximum Payload)</td>
+                        <td class="text-right" colspan="2">
+                            19,850 kg
+                        </td>
+                    </tr>
+                    </tbody>
+                    <tbody>
+                    <tr>
+                        <td>Passengers (max)</td>
+                        <td class="text-right" colspan="2">
+                            
+                                160
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Total Cargo Capacity</td>
+                        <td class="text-right">
+                            
+                                
+                                    
+                                31.60 m&sup3;
+                            
+                        </td>
+                        <td class="text-right">
+                            5,267 kg
+                        </td>
+                    </tr>
+                    
+                    </tbody>
+                    <tbody>
+                    
+                        <tr>
+                            <td>Bulk Cargo</td>
+                            <td class="text-right">
+                                31.60 m&sup3;
+                            </td>
+                            <td class="text-right">
+                                5,267 kg
+                            </td>
+                        </tr>
+                    
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <h3>Technical specification</h3>
+        <div class="as-panel">
+            <div class="as-table-well">
+                <table class="table table-hover">
+                    <tbody>
+                    <tr>
+                        <td>MTOW</td>
+                        <td class="text-right">
+                            67,585 kg
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Range</td>
+                        <td class="text-right">
+                            
+                                
+                                
+                            3,704-6,945 km
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Speed</td>
+                        <td class="text-right">
+                            830 km/h
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Ground roll takeoff</td>
+                        <td class="text-right">
+                            
+                                
+                                
+                            975-2,019 m
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Ground roll landing</td>
+                        <td class="text-right">
+                            
+                                
+                                
+                            1,204-1,509 m
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Noise category</td>
+                        <td class="text-right">
+                            Stage V /
+                            Chapter IV
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Maintenance category</td>
+                        <td class="text-right">
+                            88
+                        </td>
+                    </tr>
+                    </tbody>
+                    <tfoot>
+                    <tr>
+                        <td colspan="2" class="text-right">
+                            <a href="aircraftsPerformance?id=17590">
+                                Goto performance check tool...
+                            </a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2" class="text-right">
+                            <a href="aircraftsCompare?id=17590">
+                                Compare aircraft...
+                            </a>
+                        </td>
+                    </tr>
+                    </tfoot>
+                </table>
+            </div>
+        </div>
+
+    </div>
+    <div class="col-md-4">
+        
+            <h3>Order Aircraft</h3>
+            <form action="aircraftsOrderNew" method="post" class="as-panel">
+                <div class="form-group">
+                    <label for="amount">Order quantity</label>
+                    <select name="amount" id="amount" class="form-control">
+                        <option value="1">1</option>
+<option value="2">2</option>
+<option value="3">3</option>
+<option value="4">4</option>
+<option value="5">5</option>
+<option value="6">6</option>
+<option value="7">7</option>
+<option value="8">8</option>
+<option value="9">9</option>
+<option value="10">10</option>
+<option value="11">11</option>
+<option value="12">12</option>
+<option value="13">13</option>
+<option value="14">14</option>
+<option value="15">15</option>
+<option value="16">16</option>
+<option value="17">17</option>
+<option value="18">18</option>
+<option value="19">19</option>
+<option value="20">20</option>
+<option value="21">21</option>
+<option value="22">22</option>
+<option value="23">23</option>
+<option value="24">24</option>
+<option value="25">25</option>
+<option value="26">26</option>
+<option value="27">27</option>
+<option value="28">28</option>
+<option value="29">29</option>
+<option value="30">30</option>
+<option value="31">31</option>
+<option value="32">32</option>
+<option value="33">33</option>
+<option value="34">34</option>
+<option value="35">35</option>
+<option value="36">36</option>
+<option value="37">37</option>
+<option value="38">38</option>
+<option value="39">39</option>
+<option value="40">40</option>
+<option value="41">41</option>
+<option value="42">42</option>
+<option value="43">43</option>
+<option value="44">44</option>
+<option value="45">45</option>
+<option value="46">46</option>
+<option value="47">47</option>
+<option value="48">48</option>
+<option value="49">49</option>
+<option value="50">50</option>
+<option value="51">51</option>
+<option value="52">52</option>
+<option value="53">53</option>
+<option value="54">54</option>
+<option value="55">55</option>
+<option value="56">56</option>
+<option value="57">57</option>
+<option value="58">58</option>
+<option value="59">59</option>
+<option value="60">60</option>
+<option value="61">61</option>
+<option value="62">62</option>
+<option value="63">63</option>
+<option value="64">64</option>
+<option value="65">65</option>
+<option value="66">66</option>
+<option value="67">67</option>
+<option value="68">68</option>
+<option value="69">69</option>
+<option value="70">70</option>
+<option value="71">71</option>
+<option value="72">72</option>
+<option value="73">73</option>
+<option value="74">74</option>
+<option value="75">75</option>
+<option value="76">76</option>
+<option value="77">77</option>
+<option value="78">78</option>
+<option value="79">79</option>
+<option value="80">80</option>
+<option value="81">81</option>
+<option value="82">82</option>
+<option value="83">83</option>
+<option value="84">84</option>
+<option value="85">85</option>
+<option value="86">86</option>
+<option value="87">87</option>
+<option value="88">88</option>
+<option value="89">89</option>
+<option value="90">90</option>
+<option value="91">91</option>
+<option value="92">92</option>
+<option value="93">93</option>
+<option value="94">94</option>
+<option value="95">95</option>
+<option value="96">96</option>
+<option value="97">97</option>
+<option value="98">98</option>
+<option value="99">99</option>
+<option value="100">100</option>
+<option value="101">101</option>
+<option value="102">102</option>
+<option value="103">103</option>
+<option value="104">104</option>
+<option value="105">105</option>
+<option value="106">106</option>
+<option value="107">107</option>
+<option value="108">108</option>
+<option value="109">109</option>
+<option value="110">110</option>
+<option value="111">111</option>
+<option value="112">112</option>
+<option value="113">113</option>
+<option value="114">114</option>
+<option value="115">115</option>
+<option value="116">116</option>
+<option value="117">117</option>
+<option value="118">118</option>
+<option value="119">119</option>
+<option value="120">120</option>
+<option value="121">121</option>
+<option value="122">122</option>
+<option value="123">123</option>
+<option value="124">124</option>
+<option value="125">125</option>
+<option value="126">126</option>
+<option value="127">127</option>
+<option value="128">128</option>
+<option value="129">129</option>
+<option value="130">130</option>
+<option value="131">131</option>
+<option value="132">132</option>
+<option value="133">133</option>
+<option value="134">134</option>
+<option value="135">135</option>
+<option value="136">136</option>
+<option value="137">137</option>
+<option value="138">138</option>
+<option value="139">139</option>
+<option value="140">140</option>
+<option value="141">141</option>
+<option value="142">142</option>
+<option value="143">143</option>
+<option value="144">144</option>
+<option value="145">145</option>
+<option value="146">146</option>
+<option value="147">147</option>
+<option value="148">148</option>
+<option value="149">149</option>
+<option value="150">150</option>
+
+                    </select>
+                </div>
+                <div class="form-group submit">
+                    <input type="hidden" name="id" value="17590"/>
+                    <input type="submit" class="btn btn-success" value="request quotation..."/>
+                </div>
+            </form>
+        
+
+        <h3>Operators</h3>
+        <div class="as-panel">
+            <div class="as-table-well">
+                <table class="table table-hover">
+                    <tbody>
+                    
+                        <tr>
+                            <td>
+                                <a href="../info/enterprise?id=270">Nusantara Airlines</a> (6)
+                            </td>
+                        </tr>
+                    
+                        <tr>
+                            <td>
+                                <a href="../info/enterprise?id=302">Hungarian World Airways</a> (6)
+                            </td>
+                        </tr>
+                    
+                        <tr>
+                            <td>
+                                <a href="../info/enterprise?id=242">Rocky Mountain Air</a> (5)
+                            </td>
+                        </tr>
+                    
+                        <tr>
+                            <td>
+                                <a href="../info/enterprise?id=695">TheGalaxisAir</a> (4)
+                            </td>
+                        </tr>
+                    
+                        <tr>
+                            <td>
+                                <a href="../info/enterprise?id=700">Flying Bulgaria</a> (4)
+                            </td>
+                        </tr>
+                    
+                        <tr>
+                            <td>
+                                <a href="../info/enterprise?id=758">lion-cold</a> (4)
+                            </td>
+                        </tr>
+                    
+                        <tr>
+                            <td>
+                                <a href="../info/enterprise?id=886">NATIONAL AVIATION</a> (4)
+                            </td>
+                        </tr>
+                    
+                        <tr>
+                            <td>
+                                <a href="../info/enterprise?id=407">Helvetiair</a> (3)
+                            </td>
+                        </tr>
+                    
+                    
+                        <tr>
+                            <td>
+                                Others (20)
+                            </td>
+                        </tr>
+                    
+                    <tr>
+                        <td>
+                            public (49)
+                        </td>
+                    </tr>
+                    </tbody>
+                    <tfoot>
+                    <tr>
+                        <td>
+                            On order: 0
+                            
+                                [ <a href="aircraftsOrderbook?id=17590">Order book</a> ]
+                            
+                        </td>
+                    </tr>
+                    </tfoot>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+</div>
+
+<nav class="navbar navbar-default navbar-fixed-bottom as-navbar-bottom" role="navigation">
+    <div class="as-footer-line">
+        <div class="as-footer-line-element version">
+            v6.10.13 (build 7110)
+        </div>
+        <span class="as-footer-line-element as-game-world">
+            <span class="fa fa-globe"></span>
+            <span>free2</span>
+        </span>
+        
+        <span class="as-footer-line-element dropup">
+            <a href="#" class="" data-toggle="dropdown">
+                <span class="caret"></span>
+                <img src="../../assets/img/langs/en.png"
+                     alt="English" title="English"/>
+                    English
+            </a>
+            <ul class="dropdown-menu" role="menu">
+                <li class="dropdown-header">Official Languages</li>
+                
+                    <li>
+                        <a href="../../app/user/settings?locale=de">
+                            <img src="../../assets/img/langs/de.png" alt="Deutsch" title="Deutsch" class="flag"/>
+                                Deutsch
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="../../app/user/settings?locale=en">
+                            <img src="../../assets/img/langs/en.png" alt="English" title="English" class="flag"/>
+                                English
+                        </a>
+                    </li>
+                
+                <li class="divider"></li>
+                <li class="dropdown-header">Community Translations</li>
+                
+                    <li>
+                        <a href="../../app/user/settings?locale=es">
+                            <img src="../../assets/img/langs/es.png" alt="español" title="español" class="flag"/>
+                                español
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="../../app/user/settings?locale=fr">
+                            <img src="../../assets/img/langs/fr.png" alt="français" title="français" class="flag"/>
+                                français
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="../../app/user/settings?locale=nl">
+                            <img src="../../assets/img/langs/nl.png" alt="Nederlands" title="Nederlands" class="flag"/>
+                                Nederlands
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="../../app/user/settings?locale=pl">
+                            <img src="../../assets/img/langs/pl.png" alt="polski" title="polski" class="flag"/>
+                                polski
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="../../app/user/settings?locale=zh-TW">
+                            <img src="../../assets/img/langs/zh-TW.png" alt="中文 (台灣)" title="中文 (台灣)" class="flag"/>
+                                中文 (台灣)
+                        </a>
+                    </li>
+                
+            </ul>
+        </span>
+        
+        <span class="as-footer-line-element">
+            <span class="fa fa-clock-o"></span>
+            
+            
+                2024-11-20
+                22:18 HT
+            
+            
+            
+        </span>
+        
+        <span class="as-footer-line-element">
+            <a class="credits" href="../user/holdings">
+                <span class="fa fa-briefcase"></span>
+                
+                    
+                        <span class="good">60</span>
+                    
+                    
+                
+                Credits
+            </a>
+        </span>
+        
+        
+        <span class="as-footer-line-element close-date">
+            
+                
+                
+            This game world will end on 2024-12-23 with registrations possible until 2024-12-09.
+        </span>
+        
+    </div>
+</nav>
+
+<script>
+    $(document).ready(function() {
+        var $modal = $('#help-modal');
+
+        var updateModal = function(data) {
+            var html = $.parseHTML(data);
+            var $article = $(html);
+            var title = $article.find("#help-article-title").text();
+            var body = $article.find("#help-article-body").html();
+            $modal.find(".modal-title").text(title);
+            $modal.find(".modal-body").html(body);
+        }
+
+        // Clicks on help links outside of modal.
+        $("body").on("click", ".help-link", function(e) {
+            e.preventDefault();
+            $.get($(this).attr("href"), function (data) {
+                updateModal(data);
+                $modal.modal();
+            });
+        });
+
+        // Clicks on help links within modal.
+        $modal.on("click", "a", function(e) {
+            e.preventDefault();
+            $.get($(this).attr("href"), updateModal);
+        });
+
+        // Unread news.
+        $("#unread-news-hide").click(function(e) {
+            e.preventDefault();
+            $.get("../user/news-read", function() {
+                $('#unread-news').hide();
+            });
+        });
+        $("#unread-news-view").click(function(e) {
+            $.get("../user/news-read", function() {
+                window.location = "https://www.airlinesim.aero/blog/";
+            });
+        });
+    });
+</script>
+
+<script type="application/javascript">
+    function stc(e){var n="_sl_";function t(t,o){return!(!o||function(e){return document.cookie.split(";").some(function(t){return 0===t.trim().indexOf(n+e+"=")})}(t))&&(function(t,o){var i=new Date;i.setTime(Date.now()+62208e6),document.cookie=n+t+"="+encodeURIComponent(o)+"; expires="+i.toUTCString()+"; path=/; domain="+e+"; SameSite=Lax"}(t,o),!0)}t("lp",document.location)&&t("ref",document.referrer)}
+</script>
+<script type="application/javascript">
+    stc('airlinesim.aero');
+</script>
+
+</body>
+</html>
